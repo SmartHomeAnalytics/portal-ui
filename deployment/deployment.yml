@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gke-smart-home-portal
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gke-smart-home-portal
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        app: gke-smart-home-portal
+    spec:
+      terminationGracePeriodSeconds: 30
+      containers:
+        - name: smart-home-portal
+          image: europe-central2-docker.pkg.dev/my-project-91405-345021/smart-home-analytics-repo/smart-home-portal:{{IMAGE_VERSION}}
+          imagePullPolicy: "Always"
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              cpu: 100m
+            limits:
+              cpu: 100m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gke-smart-home-portal
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 3000
+  selector:
+    app: gke-smart-home-portal
