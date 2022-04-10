@@ -23,7 +23,7 @@ spec:
           image: europe-central2-docker.pkg.dev/my-project-91405-345021/smart-home-analytics-repo/smart-home-portal:{{IMAGE_VERSION}}
           imagePullPolicy: "Always"
           ports:
-            - containerPort: 3000
+            - containerPort: 80
           resources:
             requests:
               cpu: 100m
@@ -38,6 +38,6 @@ spec:
   type: LoadBalancer
   ports:
     - port: 80
-      targetPort: 3000
+      targetPort: 80
   selector:
     app: gke-smart-home-portal
