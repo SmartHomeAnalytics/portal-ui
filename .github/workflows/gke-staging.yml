@@ -48,7 +48,10 @@ jobs:
           cluster_name: ${{ env.GKE_CLUSTER }}
           location: ${{ env.GKE_ZONE }}
 
-      # Build application
+      - name: Install dependencies
+        run: |-
+          npm install
+
       - name: React build
         run: |-
           npm run build
