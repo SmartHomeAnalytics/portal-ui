@@ -7,6 +7,7 @@ import HomePage from './dashboard/HomePage'
 import Auth from './login/Auth'
 import RegistrationForm from './login/RegistrationForm'
 import ScrollToTop from './ScrollToTop'
+import AuthProvider from './login/AuthProvider'
 
 const useStyles = makeStyles(theme => ({
   page: {
@@ -22,17 +23,19 @@ const App = () => {
   return (
     <div>
       <CssBaseline />
-      <BrowserRouter>
-        <ScrollToTop>
-          <div className={classes.page}>
-            <Routes>
-              <Route element={<Auth />} path="auth/*" />
-              <Route element={<RegistrationForm />} path="register/*" />
-              <Route element={<HomePage />} path="/*" />
-            </Routes>
-          </div>
-        </ScrollToTop>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <ScrollToTop>
+            <div className={classes.page}>
+              <Routes>
+                <Route element={<Auth />} path="auth/*" />
+                <Route element={<RegistrationForm />} path="register/*" />
+                <Route element={<HomePage />} path="/*" />
+              </Routes>
+            </div>
+          </ScrollToTop>
+        </BrowserRouter>
+      </AuthProvider>
     </div>
   )
 }

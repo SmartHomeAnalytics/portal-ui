@@ -3,7 +3,19 @@ import { createTheme } from '@mui/material'
 const TEXT_COLOR = '#3d014a'
 const SECONDARY_TEXT_COLOR = '#383434'
 
+const PRIMARY_COLOR = '#BADCFF'
+const SECONDARY_COLOR = '#9C27B0'
+
 const theme = createTheme({
+  palette: {
+    type: 'light',
+    primary: {
+      main: PRIMARY_COLOR,
+    },
+    secondary: {
+      main: SECONDARY_COLOR,
+    },
+  },
   typography: {
     fontFamily: [
       'Roboto',
