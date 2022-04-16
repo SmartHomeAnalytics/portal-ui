@@ -5,7 +5,6 @@ import { isEmpty, prop } from 'ramda'
 
 import { fetchTests } from '../../store/actions/tests'
 import { getMultipleTests, getTestsIsLoading, getTestsList } from '../../store/reducers/tests'
-import LoginButton from '../login/LoginButton'
 
 const HomePage = () => {
   const dispatch = useDispatch()
@@ -19,8 +18,6 @@ const HomePage = () => {
 
   return (
     <Grid container direction="column">
-      <LoginButton />
-
       <Grid item>
         <Typography>Home</Typography>
       </Grid>
