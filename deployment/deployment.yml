@@ -33,7 +33,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: gke-smart-home-portal
+  name: gke-smart-home-portal-service
 spec:
   type: LoadBalancer
   ports:
