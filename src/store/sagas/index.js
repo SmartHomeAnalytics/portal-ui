@@ -1,9 +1,8 @@
 import { all, race, take } from 'redux-saga/effects'
+import { setToken } from '../../api/utils'
 import * as AuthActions from '../actions/types/auth'
 
 import tests from './tests'
-
-// import * as API from '../../api'
 
 export default function* () {
   while (true) {
@@ -16,7 +15,7 @@ export default function* () {
 
     // if cancelled because of LOGOUT action, clear tokens
     if (cancel) {
-      // API.setToken()
+      setToken()
     }
   }
 }

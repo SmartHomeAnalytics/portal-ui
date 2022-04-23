@@ -7,6 +7,7 @@ import HomePage from './dashboard/HomePage'
 import WelcomePage from './WelcomePage'
 import ScrollToTop from './ScrollToTop'
 import AuthProvider from './login/AuthProvider'
+import AuthWatcher from './login/AuthWatcher'
 
 const useStyles = makeStyles(theme => ({
   page: {
@@ -32,6 +33,7 @@ const App = () => {
                 <Route element={<HomePage />} path="/*" />
               </Routes>
             </div>
+            <AuthWatcher />
           </ScrollToTop>
         </BrowserRouter>
       </AuthProvider>

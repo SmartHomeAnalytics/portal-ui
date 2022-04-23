@@ -3,6 +3,7 @@ import { Grid, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
 import LoginButton from './login/LoginButton'
+import LogoutButton from './login/LogoutButton'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -49,6 +50,7 @@ const WelcomePage = () => {
           Don&apos;t lose you chance to make your home even smarter - sign up now!
         </Typography>
         <LoginButton className={classes.loginButton} variant="outlined" />
+        <LogoutButton className={classes.loginButton} variant="outlined" />
       </Grid>
     </Grid>
   )
