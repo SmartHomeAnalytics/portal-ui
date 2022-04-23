@@ -2,9 +2,11 @@ import { put, all } from 'redux-saga/effects'
 import { isEmpty, pick } from 'ramda'
 
 import { updateTests } from '../../actions/tests'
+import { updatePersons } from '../../actions/person'
 
 const map = {
   tests: updateTests,
+  person: updatePersons,
 }
 
 const mapKeys = Object.keys(map)

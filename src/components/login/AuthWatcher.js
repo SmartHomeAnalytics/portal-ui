@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux'
 import { loginSuccess } from '../../store/actions/auth'
 import { getToken } from '../../utils/auth0'
 import useLogout from '../../utils/useLogout'
+import configData from '../../config.json'
 
 const AuthWatcher = () => {
   const { isAuthenticated, getAccessTokenSilently, logout } = useAuth0()
@@ -15,7 +16,7 @@ const AuthWatcher = () => {
   useEffect(() => {
     async function checkAuthentication() {
       if (isAuthenticated) {
-        const token = await getToken(getAccessTokenSilently)
+        const token = await getToken(() => getAccessTokenSilently({ audience: configData.audience }))
         dispatch(loginSuccess(token))
       }
     }
