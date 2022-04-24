@@ -5,12 +5,15 @@ import { isEmpty, prop } from 'ramda'
 
 import { fetchTests } from '../../store/actions/tests'
 import { getMultipleTests, getTestsIsLoading, getTestsList } from '../../store/reducers/tests'
+import { getCurrentUser, getPersonIsLoading } from '../../store/reducers/person'
 
 const HomePage = () => {
   const dispatch = useDispatch()
   const testIds = useSelector(getTestsList)
   const tests = useSelector(getMultipleTests(testIds))
   const isLoading = useSelector(getTestsIsLoading)
+  const personIsLoading = useSelector(getPersonIsLoading)
+  const currentUser = useSelector(getCurrentUser)
 
   const fetch = () => {
     dispatch(fetchTests())
@@ -34,8 +37,22 @@ const HomePage = () => {
         </Grid>
       )}
 
+      {currentUser && (
+        <Grid item>
+          <Typography>Current user:</Typography>
+          <Typography>{JSON.stringify(currentUser)}</Typography>
+        </Grid>
+      )}
+
       {isLoading && (
         <Grid item>
+          <CircularProgress />
+        </Grid>
+      )}
+
+      {personIsLoading && (
+        <Grid item>
+          <Typography>Current loading indicator</Typography>
           <CircularProgress />
         </Grid>
       )}

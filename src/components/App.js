@@ -4,12 +4,14 @@ import { CssBaseline } from '@mui/material'
 import makeStyles from '@mui/styles/makeStyles'
 
 import HomePage from './dashboard/HomePage'
-import Auth from './login/Auth'
-import RegistrationForm from './login/RegistrationForm'
+import WelcomePage from './WelcomePage'
 import ScrollToTop from './ScrollToTop'
+import AuthProvider from './login/AuthProvider'
+import AuthWatcher from './login/AuthWatcher'
 
 const useStyles = makeStyles(theme => ({
   page: {
+    height: '100%',
     [theme.breakpoints.up('md')]: {
       display: 'flex',
     },
@@ -20,20 +22,22 @@ const App = () => {
   const classes = useStyles()
 
   return (
-    <div>
+    <>
       <CssBaseline />
-      <BrowserRouter>
-        <ScrollToTop>
-          <div className={classes.page}>
-            <Routes>
-              <Route element={<Auth />} path="auth/*" />
-              <Route element={<RegistrationForm />} path="register/*" />
-              <Route element={<HomePage />} path="/*" />
-            </Routes>
-          </div>
-        </ScrollToTop>
-      </BrowserRouter>
-    </div>
+      <AuthProvider>
+        <BrowserRouter>
+          <ScrollToTop>
+            <div className={classes.page}>
+              <Routes>
+                <Route element={<WelcomePage />} path="welcome" />
+                <Route element={<HomePage />} path="/*" />
+              </Routes>
+            </div>
+            <AuthWatcher />
+          </ScrollToTop>
+        </BrowserRouter>
+      </AuthProvider>
+    </>
   )
 }
 

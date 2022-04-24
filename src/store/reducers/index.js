@@ -1,9 +1,13 @@
 import { combineReducers } from 'redux'
 import * as AuthActions from '../actions/types/auth'
 
+import auth from './auth'
+import person from './person'
 import tests from './tests'
 
 export const appReducer = combineReducers({
+  auth,
+  person,
   tests,
 })
 
