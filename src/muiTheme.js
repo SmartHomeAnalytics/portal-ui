@@ -1,34 +1,42 @@
 import { createTheme } from '@mui/material'
 
 const TEXT_COLOR = '#3d014a'
-const SECONDARY_TEXT_COLOR = '#383434'
+const SECONDARY_TEXT_COLOR = '#2d3030'
 
 // const ACCENT_COLOR = '#9C27B0'
 const PRIMARY_COLOR = '#0d47a1'
-const PRIMARY_LIGHT_COLOR = '#BADCFF'
-const SECONDARY_COLOR = '#03fcf0'
+// const PRIMARY_LIGHT_COLOR = '#BADCFF'
+const PRIMARY_LIGHT_COLOR = '#6ee9ff'
+// const SECONDARY_COLOR = '#03fcf0'
 // const WHITE_COLOR = '#FFFFFF'
 
 const theme = createTheme({
   colors: {
-    primarySolidBackground: PRIMARY_LIGHT_COLOR,
     darkBackground: PRIMARY_COLOR,
     white: '#ffffff',
+    selectedItem: SECONDARY_TEXT_COLOR,
   },
   palette: {
-    type: 'light',
     primary: {
       main: PRIMARY_COLOR,
     },
     secondary: {
-      main: PRIMARY_LIGHT_COLOR,
+      main: SECONDARY_TEXT_COLOR,
     },
-    neonLight: {
-      main: SECONDARY_COLOR,
+    primaryLight: {
+      main: PRIMARY_LIGHT_COLOR,
     },
   },
   constants: {
     welcomeCardShadow: '0 28px 10px 10px #999999',
+    toolbarHeight: 64,
+    leftMenuExpandedWidth: 290,
+  },
+  transitions: {
+    duration: {
+      enteringScreen: 200,
+      leavingScreen: 150,
+    },
   },
   typography: {
     fontFamily: [

@@ -64,8 +64,8 @@ const WelcomePage = () => {
 
             Don&apos;t lose you chance to make your home even smarter - sign up now!
           </Typography>
-          <LoginButton className={classes.actionButton} color="neonLight" variant="outlined" />
-          <LogoutButton className={classes.actionButton} color="neonLight" variant="outlined" />
+          <LoginButton className={classes.actionButton} color="primaryLight" variant="outlined" />
+          <LogoutButton className={classes.actionButton} color="primaryLight" variant="outlined" />
         </Grid>
 
         <Grid container item justifyContent="center">

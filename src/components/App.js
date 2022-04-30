@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { CssBaseline } from '@mui/material'
 import makeStyles from '@mui/styles/makeStyles'
 
-import HomePage from './dashboard/HomePage'
+import Home from './dashboard/Home'
 import WelcomePage from './WelcomePage'
 import ScrollToTop from './ScrollToTop'
 import AuthProvider from './login/AuthProvider'
@@ -30,7 +30,7 @@ const App = () => {
             <div className={classes.page}>
               <Routes>
                 <Route element={<WelcomePage />} path="welcome" />
-                <Route element={<HomePage />} path="/*" />
+                <Route element={<Home />} path="/*" />
               </Routes>
             </div>
             <AuthWatcher />
