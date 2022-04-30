@@ -12,6 +12,7 @@ const PRIMARY_LIGHT_COLOR = '#6ee9ff'
 
 const theme = createTheme({
   colors: {
+    primary: PRIMARY_COLOR,
     darkBackground: PRIMARY_COLOR,
     white: '#ffffff',
     selectedItem: SECONDARY_TEXT_COLOR,

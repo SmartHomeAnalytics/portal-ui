@@ -4,9 +4,11 @@ import {
   Grid,
   IconButton,
   Toolbar,
+  Typography,
 } from '@mui/material'
 import makeStyles from '@mui/styles/makeStyles'
 import MenuIcon from '@mui/icons-material/Menu'
+import { useTheme } from '@mui/styles'
 import SmartHomeLogoSvg from '../../icons/SmartHomeLogo'
 import LogoutButton from '../../login/LogoutButton'
 
@@ -31,9 +33,10 @@ const useStyles = makeStyles(theme => ({
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
   },
-  logo: {
-    marginTop: 5,
-    marginLeft: theme.spacing(2),
+  logoName: {
+    fontSize: '1.8rem',
+    color: theme.colors.primary,
+    margin: theme.spacing(0.5, 0, 0, 1),
   },
 }), { name: 'Header' })
 
@@ -41,6 +44,7 @@ const Header = forwardRef(function Header({
   onSandwichClicked,
 }, ref) {
   const classes = useStyles()
+  const theme = useTheme()
 
   return (
     <AppBar
@@ -55,7 +59,8 @@ const Header = forwardRef(function Header({
             <IconButton aria-label="Open menu" size="large" onClick={onSandwichClicked}>
               <MenuIcon />
             </IconButton>
-            <SmartHomeLogoSvg style={{ marginLeft: 16 }} />
+            <SmartHomeLogoSvg fill={theme.colors.primary} style={{ marginLeft: 32 }} />
+            <Typography className={classes.logoName}>Smart Home Analytics</Typography>
           </Grid>
           <LogoutButton />
         </Grid>
