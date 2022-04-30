@@ -11,7 +11,7 @@ import SlidingMenuListItem from './SlidingMenuListItem'
 
 const useStyles = makeStyles(theme => ({
   paper: {
-    top: theme.mixins.toolbar.minHeight,
+    top: theme.constants.toolbarHeight,
     overflowX: 'hidden',
     bottom: 0,
     height: 'auto',

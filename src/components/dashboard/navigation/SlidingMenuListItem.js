@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
     width: 'auto',
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
-    padding: theme.spacing(0, 2, 0, 0.5),
+    padding: theme.spacing(0, 0.5),
     '&:focus, &:hover, &:visited, &:link, &:active': {
       backgroundColor: theme.colors.tableBackground,
       textDecoration: 'none',
@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme => ({
   icon: {
     minWidth: 0,
     color: 'inherit',
-    margin: theme.spacing(1),
+    margin: theme.spacing(0.5),
     marginRight: 0,
     textAlign: 'center',
     width: 24,

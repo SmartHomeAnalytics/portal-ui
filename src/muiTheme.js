@@ -32,6 +32,7 @@ const theme = createTheme({
     welcomeCardShadow: '0 28px 10px 10px #999999',
     toolbarHeight: 64,
     leftMenuExpandedWidth: 290,
+    leftMenuWidth: 57,
   },
   transitions: {
     duration: {
